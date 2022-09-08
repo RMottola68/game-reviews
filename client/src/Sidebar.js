@@ -5,11 +5,11 @@ import {
   CDBSidebarFooter,
   CDBSidebarHeader,
   CDBSidebarMenu,
-  CDBSidebarMenuItem,
+  CDBSidebarMenuItem
 } from 'cdbreact';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faRightFromBracket } from '@fortawesome/free-solid-svg-icons';
-import { Button } from 'react-bootstrap';
+import { Button, Row, Col, Container } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
 
 function Sidebar({ user, setUser }) {
@@ -24,32 +24,58 @@ function Sidebar({ user, setUser }) {
     <div className="sidebar-btn-wrapper fixed-top" style={{height: "100vh"}}>
         <CDBSidebar textColor="#fff" backgroundColor="#333">
             <CDBSidebarHeader prefix={<i className="fa fa-bars fa-large"></i>}>
-                <a href="/" className="text-decoration-none" style={{ color: 'inherit' }}>
+                <a href="/games" className="text-decoration-none" style={{ color: 'inherit' }}>
                     Welcome, {user.username}!
                 </a>
             </CDBSidebarHeader>
             
-            <CDBSidebarContent className="sidebar-content">
+            <CDBSidebarContent className="sidebar-content" >
                 <CDBSidebarMenu>
-                    <NavLink exact to="/games" activeClassName="activeClicked">
-                        <CDBSidebarMenuItem icon="columns">Games</CDBSidebarMenuItem>
-                    </NavLink>
-
-                    <NavLink exact to="/reviews" activeClassName="activeClicked">
-                        <CDBSidebarMenuItem icon="table">Reviews</CDBSidebarMenuItem>
-                    </NavLink>
-
-                    <NavLink exact to="/myprofile" activeClassName="activeClicked">
-                        <CDBSidebarMenuItem icon="user">My Profile</CDBSidebarMenuItem>
-                    </NavLink>
+                    <Row>
+                        <NavLink exact to="/games" activeClassName="activeClicked"  className="d-flex align-items-center">
+                            
+                            <Col className="text-center "><CDBSidebarMenuItem icon="columns" ></CDBSidebarMenuItem></Col>
+                            <Col className="text-center "><Button class="" variant="outline-light">Games</Button></Col>
+                            
+                        </NavLink>
+                    </Row>
                     
-                    <NavLink exact to="/addgame" activeClassName="activeClicked">
-                        <CDBSidebarMenuItem icon="chart-line">Add a Game</CDBSidebarMenuItem>
-                    </NavLink>
+                    
+                    <Row className="d-flex align-items-center">
+                        <NavLink exact to="/reviews" activeClassName="activeClicked" className="d-flex align-items-center">
+                            
+                            <Col className="text-center "><CDBSidebarMenuItem icon="table" ></CDBSidebarMenuItem></Col>
+                            <Col className="text-center "><Button variant="outline-light" >Reviews</Button></Col>
+                            
+                        </NavLink>
+                    </Row>
 
-                    <NavLink exact to="/addreview" activeClassName="activeClicked">
-                        <CDBSidebarMenuItem icon="chart-line">Add a Review</CDBSidebarMenuItem>
-                    </NavLink>
+                    <Row className="d-flex align-items-center">
+                        <NavLink exact to="/myprofile" activeClassName="activeClicked" className="d-flex align-items-center">
+                            
+                            <Col className="text-center "><CDBSidebarMenuItem icon="user"></CDBSidebarMenuItem></Col>
+                            <Col className="text-center "><Button variant="outline-light">My Profile</Button></Col>
+                            
+                        </NavLink>
+                    </Row>
+                    
+                    <Row className="d-flex align-items-center">
+                        <NavLink exact to="/addgame" activeClassName="activeClicked" className="d-flex align-items-center">
+                            
+                            <Col className="text-center "><CDBSidebarMenuItem icon="chart-line"></CDBSidebarMenuItem></Col>
+                            <Col className="text-center "><Button variant="outline-light">Add a Game</Button></Col>
+                            
+                        </NavLink>
+                    </Row>
+
+                    <Row className="d-flex align-items-center">
+                        <NavLink exact to="/addreview" activeClassName="activeClicked" className="d-flex align-items-center">
+                            
+                            <Col className="text-center "><CDBSidebarMenuItem icon="chart-line"></CDBSidebarMenuItem></Col>
+                            <Col className="text-center "><Button variant="outline-light">Add a Review</Button></Col>
+                            
+                        </NavLink>
+                    </Row>
 
                 </CDBSidebarMenu>
             </CDBSidebarContent>
