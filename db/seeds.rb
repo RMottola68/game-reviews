@@ -4,12 +4,12 @@
 # Examples:
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
-#   Character.create(name: "Luke", movie: movies.first)
+#   Character.create(name: "Luke", movie: movies.first)"
 
-user1 = User.create!(username: "test1", is_developer: false, join_date: "03/09/2020", password: "test1")
-user2 = User.create!(username: "test2", is_developer: true, join_date: "01/27/2022", password: "test2")
-user1 = User.create!(username: "test3", is_developer: false, join_date: "7/18/2021", password: "test3")
-user1 = User.create!(username: "test4", is_developer: false, join_date: "08/15/2022", password: "test4")
+user1 = User.create!(username: "test1", is_developer: "false", join_date: "03/09/2020", password: "test1")
+user2 = User.create!(username: "test2", is_developer: "true", join_date: "01/27/2022", password: "test2")
+user1 = User.create!(username: "test3", is_developer: "false", join_date: "7/18/2021", password: "test3")
+user1 = User.create!(username: "test4", is_developer: "false", join_date: "08/15/2022", password: "test4")
 
 game1 = Game.create!(title: "super meat boy", developer: "Team Meat", publisher: "Team Meat", release_date: "11/30/2010", genre: "Platformer", image: "https://upload.wikimedia.org/wikipedia/en/a/aa/SuperMeatBoy_cover.png")
 game2 = Game.create!(title: "VRChat", developer: "VRChat Inc.", publisher: "VRChat Inc.", release_date: "02/01/2017", genre: "Social", image: "https://static-cdn.jtvnw.net/ttv-boxart/499003_IGDB-285x380.jpg")
