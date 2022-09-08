@@ -13,7 +13,6 @@ import MyProfile from "./MyProfile";
 import GameForm from "./GameForm";
 import ReviewForm from "./ReviewForm";
 import Login from "./Login";
-import SignUp from "./SignUp";
 import './App.css';
 
 

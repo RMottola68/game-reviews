@@ -47,11 +47,11 @@ function Login({ setUser }) {
           value={loginPass}
           onChange={(e) => setloginPass(e.target.value)}
         />
-        <button type="submit" >Login</button>
+        <Button type="submit" >Login</Button>
       </form>
       <br></br>
       <h1>OR</h1>
-      <Button className="btn-success my-5" onClick={()=> setClicked(true)}>Sign Up!</Button>
+      <Button className=" my-5" onClick={()=> setClicked(true)}>Sign Up!</Button>
     </div>
   )} else {
     return(

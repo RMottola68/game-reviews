@@ -56,7 +56,7 @@ function Sidebar({ user, setUser }) {
 
             <CDBSidebarFooter style={{ textAlign: 'center' }}>       
                     
-                <CDBSidebarMenuItem icon="power-off" activeClassName="activeClicked" >
+                <CDBSidebarMenuItem icon="power-off" activeClassName="activeClicked" onClick={handleLogoutClick}>
                     
                     <Button exact className="btn-danger m-0" onClick={handleLogoutClick}>Logout</Button>
                 </CDBSidebarMenuItem>                    
