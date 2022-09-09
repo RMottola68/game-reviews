@@ -52,7 +52,7 @@ class UsersController < ApplicationController
       private
     #defines the params for s user
       def user_params
-        params.permit(:password, :password_confirmation, :is_developer, :join_date, :username)
+        params.permit(:password, :password_confirmation, :is_developer, :join_date, :username, :image)
       end
     end
   

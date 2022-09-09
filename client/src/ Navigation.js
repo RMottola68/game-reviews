@@ -59,22 +59,22 @@ function Navigation({ user, setUser }) {
                           <h2 className="d-flex justify-content-center">License Plateholder</h2>
                           <div className="d-flex justify-content-center">
 
-                            <Button className="mx-1 btn-success" >
+                            <Button className="mx-1 btn-dark" >
                               <Link className="text-decoration-none  text-white" to="games">Games</Link>
                             </Button>
 
-                            <Button className="mx-1 btn-success" >
+                            <Button className="mx-1 btn-dark" >
                               <Link className="text-decoration-none  text-white" to="profile">My Profile</Link>
                                 
                             </Button>
                         
-                            <Button className="mx-1 btn-success" >
+                            <Button className="mx-1 btn-dark" >
                                 <Link  className="text-decoration-none  text-white" to="reviews">Search Reviews</Link>
                             </Button>
 
 
 
-                            <Button className="mx-1 btn-success" >
+                            <Button className="mx-1 btn-dark" >
                                 <Link  className="text-decoration-none  text-white" to="newreview">Review a Game</Link>
                             </Button>
                           </div>
@@ -86,15 +86,15 @@ function Navigation({ user, setUser }) {
                         <Link  className="text-decoration-none  text-white" to="profile">
                           <img src={user.image} style={{width: 'auto', height: 125, borderRadius: "30px"}}></img>
                         </Link>
-                        <Button className="btn-success my-5 mx-1" onClick={handleLogoutClick}>Logout</Button>
-                        <Button className="btn-success my-5" onClick={() => console.log('clicked')}>
+                        <Button className="btn-dark my-5 mx-1" onClick={handleLogoutClick}>Logout</Button>
+                        <Button className="btn-dark my-5" onClick={() => console.log('clicked')}>
                         <Link  className="text-decoration-none  text-white" to="profile">My Profile</Link>
                           </Button>
                       </Nav.Item>
                     </Col>
                     
                 </Nav>
-                <Button className="btn-success p-3" style={{display: visible ? 'inline' : 'none', position:"fixed",width:"fit-content",height:"fit-content",left:"90%",bottom:"40px",fontSize:"10px",zIndex:"99",cursor:"pointer", color:"red",border:"red"}}>
+                <Button className="btn-dark p-3" style={{display: visible ? 'inline' : 'none', position:"fixed",width:"fit-content",height:"fit-content",left:"90%",bottom:"40px",fontSize:"10px",zIndex:"99",cursor:"pointer", color:"red",border:"red"}}>
                 <span className="material-symbols-outlined" onClick={scrollToTop} style={{height:"fit-content"}}><FontAwesomeIcon icon={faChevronUp} className="fas fa-3x" /></span>
                 </Button>
             </Row>

@@ -16,9 +16,9 @@ function Login({ setUser }) {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({ username: loginUser, password: loginPass}),
-    }).then((res) => {
-      if (res.ok) {
-        res.json().then((user) => setUser(user));
+    }).then((r) => {
+      if (r.ok) {
+        r.json().then((user) => setUser(user));
       } else {
         alert('Invalid username or password')
       }

@@ -48,16 +48,20 @@ function SignUp({ setUser, setClicked }) {
         username,
         password,
         password_confirmation: passwordConfirmation,
-        isDeveloper,  
-        image,
-        joinDate
+        is_developer: isDeveloper,
+        join_date: joinDate,
+        image
       }),
     }).then((r) => {
       if (r.ok) {
         r.json().then((user) => setUser(user));
       }
+    }).then((r) => {
+      if(r.ok){
+        handleLogin(e)
+      }
     })
-    .then(handleLogin(e))
+    
   }
 
   return (
@@ -114,7 +118,7 @@ function SignUp({ setUser, setClicked }) {
       </form>
       <br></br>
       <h1>OR</h1>
-      <Button className="btn-success my-5" onClick={()=> setClicked(false)}>Login</Button>
+      <Button className="btn-dark my-5" onClick={()=> setClicked(false)}>Login</Button>
     </div>
     
   );
