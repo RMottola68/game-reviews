@@ -22,7 +22,7 @@ class UsersController < ApplicationController
       def show
         user = User.find_by(id: params[:id])
         if user
-          render json: user, serializer: UserSerializer
+          render json: user, serializer: UserWithReviewsSerializer
         else
           render json: { error: "Not authorized" }, status: :unauthorized
         end
@@ -32,7 +32,7 @@ class UsersController < ApplicationController
       def show_my_profile
         user = User.find_by(id: session[:user_id])
         if user
-          render json: user, serializer: UserSerializer
+          render json: user, serializer: UserWithReviewsSerializer
         else
           render json: { error: "Not authorized" }, status: :unauthorized
         end

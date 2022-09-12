@@ -9,11 +9,14 @@ Rails.application.routes.draw do
 
   #games routes
   post "/addgame", to: "games#create"
+  get "/games", to: "games#index"
+
 
 
 
   #review routes
   post "/addreview", to: "reviews#create"
+  get "/reviews", to: "reviews#index"
 
   #user routes
   post "/signup", to: "users#create"

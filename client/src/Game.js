@@ -1,4 +1,4 @@
-import { useState, useEffect, useReducer} from 'react';
+import { useState, useEffect} from 'react';
 import { Button, Row, Col, Container } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
@@ -8,7 +8,7 @@ function Game({ game }) {
     return (      
                  
         
-            <div className="card border border-5 border-light bg-dark">  
+            <div className="card border border-5 border-light bg-dark" style={{borderRadius: "30px"}}>  
             <Link className="text-decoration-none text-white" to={`/games/${game.id}`}>              
                 <div className="">
                     <div style={{fontSize: "30px"}}>Title: {game.title}</div>
@@ -20,7 +20,7 @@ function Game({ game }) {
 
                 </div>    
                 </Link>    
-                <Link to="/addreview">
+                <Link to="/addreview" className="my-2">
                     <Button>Leave a Review</Button>    
                 </Link>            
             </div>

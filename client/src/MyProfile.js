@@ -1,8 +1,13 @@
-import { Button, Row, Col, Container } from 'react-bootstrap';
+import { useState, useEffect } from 'react';
+import { Row, Col, Container } from 'react-bootstrap';
+import { useParams } from 'react-router-dom'
+import ReviewNoImage from "./ReviewNoImage"
 
-function MyProfile({ user }){
+function MyProfile({ user, setUser }){
+    
+
     return(
-        <Container className="text-center pt-5" style={{ borderRadius: "30px", height: "100vh", width: "100vw"}}>
+        <Container className="text-center pt-5" style={{ borderRadius: "30px"}}>
             <Row  className="bg-dark border border-5 border-dark justify-contents-center" style={{borderRadius: "30px"}}>  
                 <Row className="my-2 text-center">
                     <div className="text-light">
@@ -13,6 +18,10 @@ function MyProfile({ user }){
                         <img src={user.image} className="mx-1 "  />          
                     </div>    
                 </ Row>
+                <Row>
+                <h2 className="text-center text-light">Reviews You've Written</h2>
+                    {user.reviews.length > 0 ? user.reviews.map((review) => <ReviewNoImage review={review} key={review.id} />) : <h3 className="text-center">You haven't written any reviews!</h3>}
+                </Row>
                    
                         
             </ Row>

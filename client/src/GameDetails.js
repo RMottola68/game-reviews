@@ -1,6 +1,7 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useParams } from 'react-router-dom'
 import { Container, Row } from 'react-bootstrap';
+import ReviewNoImage from "./ReviewNoImage"
 import Game from './Game';
 
 
@@ -21,6 +22,7 @@ function GameDetails() {
           setIsLoaded(true)
         });
     }, [id]);
+    console.log(game)
   
     if (!isLoaded) return <h2>Loading...</h2>
 
@@ -28,14 +30,16 @@ function GameDetails() {
 
     return(
 
-      <div className="justify-contents-center p-5" style={{borderRadius: "30px", height: "100vh", width: "100vw"}}>
-        <Container>
-            <Row >
-                
+      
+        <Container className="p-5" style={{borderRadius: "30px"}}>
+            <Row className="text-center  justify-contents-center" style={{borderRadius: "30px"}}>
                 <Game game={game}/>
             </Row>
+            <Row>
+              <h2 className="text-center">Reviews for this Game</h2>
+              {game.reviews.length > 0 ? game.reviews.map((review) => <ReviewNoImage review={review} key={review.id} />) : <h3 className="text-center">There are no reviews!</h3>}
+            </Row>
         </Container>
-    </div>
     );
 }
 

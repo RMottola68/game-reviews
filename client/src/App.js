@@ -60,9 +60,9 @@ function App() {
           <Route path="games" element={<GamesContainer games={games} />} />
           <Route path="games/:id" element={<GameDetails />} />
           <Route path="reviews" element={<ReviewsContainer reviews={reviews} />} />
-          <Route path="myprofile" element={<MyProfile user={user}/>} />
-          <Route path="addgame" element={<GameForm setGames={setGames} />} />
-          <Route path="addreview" element={<ReviewForm setReviews={setReviews} />} />
+          <Route path="myprofile" element={<MyProfile user={user} setUser={setUser} />} />
+          <Route path="addgame" element={<GameForm setGames={setGames}/>} />
+          <Route path="addreview" element={<ReviewForm setReviews={setReviews} user={user} games={games} />} />
           
         </Routes>
       </div>
