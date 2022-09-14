@@ -1,10 +1,11 @@
-import { useState, useEffect } from 'react';
+import { useEffect } from "react";
 import { Row, Col, Container } from 'react-bootstrap';
-import { useParams } from 'react-router-dom'
-import ReviewNoImage from "./ReviewNoImage"
+import ReviewForProfile from './ReviewForProfile';
 
-function MyProfile({ user, setUser }){
-    
+function MyProfile({ user }){
+
+
+    console.log(user)
 
     return(
         <Container className="text-center pt-5" style={{ borderRadius: "30px"}}>
@@ -15,12 +16,12 @@ function MyProfile({ user, setUser }){
                         <div style={{fontSize: "30px"}}>{user.username}</div>
                         <div style={{fontSize: "30px"}}>Are you a Developer: {user.is_developer === "true" ? "yes" : "no"}</div>
                         <div style={{fontSize: "30px"}}>Joined: {user.join_date}</div>   
-                        <img src={user.image} className="mx-1 "  />          
+                        <img src={user.image} className="" style={{width: '800px'}}  />          
                     </div>    
                 </ Row>
-                <Row>
-                <h2 className="text-center text-light">Reviews You've Written</h2>
-                    {user.reviews.length > 0 ? user.reviews.map((review) => <ReviewNoImage review={review} key={review.id} />) : <h3 className="text-center">You haven't written any reviews!</h3>}
+                <Row className="px-5">
+                <h2 className="text-center text-light" >Reviews You've Written</h2>
+                    {user.reviews.length > 0 ? user.reviews.map((review) => <ReviewForProfile review={review} key={review.id} />) : <h3 className="text-center text-light" >You haven't written any reviews yet!</h3>}
                 </Row>
                    
                         

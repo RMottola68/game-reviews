@@ -1,4 +1,5 @@
 class ReviewsController < ApplicationController
+    skip_before_action :authorized
     rescue_from ActiveRecord::RecordNotFound, with: :render_missing_record_error
     rescue_from ActiveRecord::RecordInvalid, with: :render_unprocessable_entity_error
     #shows all reviews

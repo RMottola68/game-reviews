@@ -1,7 +1,6 @@
 import React from 'react';
-import Button from 'react-bootstrap/Button';
-import Form from 'react-bootstrap/Form';
-import { Container } from 'react-bootstrap';
+
+import { Container, Form, Button } from 'react-bootstrap';
 import { useState, useEffect } from 'react';
 
 function GameForm({ setGames }) {
@@ -53,7 +52,7 @@ function GameForm({ setGames }) {
     <div className="p-5">
         <Container className="text-center p-5 bg-dark text-light" style={{borderRadius: "30px"}}>
             <h1>Add a Game to our Library</h1>
-            <Form className="p-5" id="gameform" onSubmit={(e) => {                
+            <Form className="p-5" onSubmit={(e) => {                
                 handleSubmit(e)                
             }}>
                 <Form.Group  className="mb-0" controlId="formBasicName" >
@@ -73,17 +72,17 @@ function GameForm({ setGames }) {
                     </Form.Text>
                 </Form.Group>
                 <Form.Group  className="mb-0" controlId="formBasicPrice" >
-                <Form.Label>Release Date</Form.Label>
+                    <Form.Label>Release Date</Form.Label>
                     <Form.Control className="text-center" name="release_date" type="string" placeholder="Enter Release Date" onChange={handleChange} value={form.release_date}/>
                     <Form.Text className="text-muted"></Form.Text>
                 </Form.Group>
                 <Form.Group  className="mb-0" controlId="formBasicPrice" >
-                <Form.Label>Genre</Form.Label>
+                    <Form.Label>Genre</Form.Label>
                     <Form.Control className="text-center" name="genre" type="string" placeholder="Enter Genre" onChange={handleChange} value={form.genre}/>
                     <Form.Text className="text-muted"></Form.Text>
                 </Form.Group>
                 <Form.Group  className="mb-0" controlId="formBasicPrice" >
-                <Form.Label>Add Game Cover</Form.Label>
+                    <Form.Label>Add Game Cover</Form.Label>
                     <Form.Control className="text-center" name="image" type="string" placeholder="Image URL Here" onChange={handleChange} value={form.image}/>
                     <Form.Text className="text-muted"></Form.Text>
                 </Form.Group>

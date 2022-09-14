@@ -13,7 +13,8 @@ import { NavLink } from 'react-router-dom';
 
 function Sidebar({ user, setUser }) {
     function handleLogoutClick() {
-        fetch("/logout", { method: "DELETE" }).then((r) => {
+        fetch("/logout", { method: "DELETE" })
+        .then((r) => {
             if (r.ok) {
             setUser(null);
             }
@@ -80,11 +81,16 @@ function Sidebar({ user, setUser }) {
             </CDBSidebarContent>
 
             <CDBSidebarFooter style={{ textAlign: 'center' }}>       
-                    
-                <CDBSidebarMenuItem icon="power-off"  onClick={handleLogoutClick}>
-                    
-                    <Button className="btn-danger m-0" onClick={handleLogoutClick}>Logout</Button>
-                </CDBSidebarMenuItem>                    
+                <Row>       
+                    <NavLink to="/login" className="d-flex text-light align-items-center text-decoration-none">
+                        <Col>
+                            <CDBSidebarMenuItem icon="power-off"  onClick={handleLogoutClick}>
+                                <Button className="btn-danger m-0" onClick={handleLogoutClick}>Logout</Button>
+                            </CDBSidebarMenuItem>
+                        </Col>
+                    </NavLink>   
+                </Row>
+                            
                 
             </CDBSidebarFooter>
         </CDBSidebar>

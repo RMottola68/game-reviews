@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Button } from 'react-bootstrap';
-import { NavLink } from 'react-router-dom';
+import { Button, Container, Form, Row } from 'react-bootstrap';
 import SignUp from './SignUp';
 
 function Login({ setUser }) {
@@ -28,30 +27,43 @@ function Login({ setUser }) {
 
     if (!clicked) {
       return(
-    <div>
-      <form onSubmit={handleLogin}>
-        <h1>Login</h1>
-        <label htmlFor="username">Username</label>
-        <input
-          type="text"
-          id="username"
-          autoComplete="off"
-          value={loginUser}
-          onChange={(e) => setloginUser(e.target.value)}
-        />
-        <label htmlFor="password">Password</label>
-        <input
-          type="password"
-          id="password"
-          autoComplete="current-password"
-          value={loginPass}
-          onChange={(e) => setloginPass(e.target.value)}
-        />
-        <Button type="submit" >Login</Button>
-      </form>
-      <br></br>
-      <h1>OR</h1>
-      <Button className=" my-5" onClick={()=> setClicked(true)}>Sign Up!</Button>
+    <div className="p-5">
+      <Container className="text-center p-5 bg-dark text-light" style={{borderRadius: "30px"}}>
+        
+        <Form onSubmit={handleLogin}>
+          <h1 className="mb-5">Login to Reviewbers</h1>
+          <Row>
+            <Form.Group  className="mb-0" controlId="formBasicName" >
+              <Form.Label htmlFor="username"><h2>Username</h2></Form.Label>
+              <Form.Control
+                type="text"
+                id="username"
+                autoComplete="off"
+                value={loginUser}
+                onChange={(e) => setloginUser(e.target.value)}
+              />
+              <Form.Text className="text-muted"></Form.Text>
+            </Form.Group>
+          </Row>
+          <Row>
+            <Form.Group>
+          <Form.Label htmlFor="password">Password</Form.Label>
+          <Form.Control
+            type="password"
+            id="password"
+            autoComplete="current-password"
+            value={loginPass}
+            onChange={(e) => setloginPass(e.target.value)}
+          />
+          <Form.Text  className="text-muted"></Form.Text>
+          </Form.Group>
+          </Row>
+          <Button type="submit" className="my-5">Login</Button>
+        </Form>
+        <br></br>
+        <h1>OR</h1>
+        <Button className=" my-5" onClick={()=> setClicked(true)}>Sign Up!</Button>
+        </Container>
     </div>
   )} else {
     return(

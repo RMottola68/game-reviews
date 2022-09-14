@@ -2,9 +2,15 @@ import { useState, useEffect} from 'react';
 import Game from "./Game"
 import { Button, Row, Col, Container } from 'react-bootstrap';
 
-function GamesContainer({ games }) {
+function GamesContainer({ games, setGames }) {
 
     const [gameSearch, setGameSearch] = useState('');
+
+    useEffect(()=>{
+        fetch('/games')
+          .then(res=>res.json())
+          .then(gamesData => setGames(gamesData))
+    },[])
 
     const search = games.filter((game)=>  {
         let gameSearchCase = gameSearch.toLowerCase()

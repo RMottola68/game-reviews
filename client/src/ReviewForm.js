@@ -4,7 +4,7 @@ import Form from 'react-bootstrap/Form';
 import { Container } from 'react-bootstrap';
 import { useState, useEffect } from 'react';
 
-function GameForm({ setReviews, user, games }) {
+function GameForm({ setReviews, user, setUser, games }) {
 
     // useEffect(()=>{
         // fetch('/reviews')
@@ -38,7 +38,12 @@ function GameForm({ setReviews, user, games }) {
             } else {
                 fetch('/reviews')
                 .then(res=>res.json())
-                .then(reviewsData => setReviews(reviewsData))
+                .then(reviewsData => {
+                    const updatedUser={...user}
+                    updatedUser.reviews.push(reviewsData[reviewsData.length-1])
+                    setUser(updatedUser)
+                    setReviews(reviewsData)
+                })
                 alert("Review Added!")
                 setForm ({
                     rating: "",

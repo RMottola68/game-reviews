@@ -19,11 +19,7 @@ function Review({ review }) {
                     
                     
 
-                </div>    
-                    
-                <Link to="/addreview">
-                    <Button>Leave a Review</Button>    
-                </Link>            
+                </div>              
             </div>
         
         

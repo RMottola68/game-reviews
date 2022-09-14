@@ -21,7 +21,17 @@ function App() {
   const [games, setGames] = useState([]);
   const [reviews, setReviews] = useState([]);
 
+  useEffect(()=>{
+    fetch('/games')
+      .then(res=>res.json())
+      .then(gamesData => setGames(gamesData))
+  },[])
 
+  useEffect(()=>{
+    fetch('/reviews')
+      .then(res=>res.json())
+      .then(reviewsData => setReviews(reviewsData))
+  },[])
 
   useEffect(() => {
     // auto-login
@@ -31,18 +41,6 @@ function App() {
       }
     });
   }, []);
-
-  useEffect(()=>{
-    fetch('/reviews')
-      .then(res=>res.json())
-      .then(reviewsData => setReviews(reviewsData))
-  },[])
-
-  useEffect(()=>{
-    fetch('/games')
-      .then(res=>res.json())
-      .then(gamesData => setGames(gamesData))
-  },[])
 
   if(!user) {
     return (
@@ -57,13 +55,12 @@ function App() {
         <Routes style={{position: "relative"}}>
           
           <Route path="*" element={<Navigate to="/games" replace/>} />
-          <Route path="games" element={<GamesContainer games={games} />} />
+          <Route path="games" element={<GamesContainer games={games} setGames={setGames} />} />
           <Route path="games/:id" element={<GameDetails />} />
           <Route path="reviews" element={<ReviewsContainer reviews={reviews} />} />
-          <Route path="myprofile" element={<MyProfile user={user} setUser={setUser} />} />
+          <Route path="myprofile" element={<MyProfile user={user} />} />
           <Route path="addgame" element={<GameForm setGames={setGames}/>} />
-          <Route path="addreview" element={<ReviewForm setReviews={setReviews} user={user} games={games} />} />
-          
+          <Route path="addreview" element={<ReviewForm setReviews={setReviews} user={user} setUser={setUser} games={games} />} />
         </Routes>
       </div>
     );

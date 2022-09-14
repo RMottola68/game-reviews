@@ -22,7 +22,6 @@ function GameDetails() {
           setIsLoaded(true)
         });
     }, [id]);
-    console.log(game)
   
     if (!isLoaded) return <h2>Loading...</h2>
 
