@@ -17,7 +17,7 @@ function ReviewsContainer({ reviews }) {
     return (
         <Container className="text-center pt-2" style={{ borderRadius: "30px", height: "100%", width: "100vw"}}>
             <Container >
-                <Row  className="bg-muted justify-content-center" >
+                <Row className="bg-muted justify-content-center" >
                     <Row className="my-2 border-light border border-5 text-center justify-content-center bg-dark" style={{borderRadius: "30px"}}>
                         <img src={Reviews} style={{width:"auto"}} />
                         <div>

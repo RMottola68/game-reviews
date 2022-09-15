@@ -25,7 +25,9 @@ function Sidebar({ user, setUser }) {
         <CDBSidebar defaultOpentextColor="#fff" backgroundColor="#333" >
             <CDBSidebarHeader prefix={<i className="fa fa-bars fa-large"></i>}>
                 <a href="/games" className="text-decoration-none" style={{ color: 'inherit' }}>
-                    Welcome, {user.username}!
+                    Welcome,
+                    < br/>
+                    {user.username}!
                 </a>
             </CDBSidebarHeader>
             

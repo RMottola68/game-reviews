@@ -24,8 +24,8 @@ function GamesContainer({ games, setGames }) {
         
         <Container className="text-center pt-2" style={{ borderRadius: "30px", height: "100%", width: "100vw"}}>
             <Container >
-                <Row  className="bg-muted justify-contents-center" style={{borderRadius: "30px", marginRight: "auto", marginLeft: "auto"}}>
-                    <Row className="my-2 border-light border border-5 text-center bg-dark justify-content-center" style={{borderRadius: "30px"}}>
+                <Row  className="bg-muted justify-content-center" >
+                    <Row className="my-2 border-light border border-5 text-center justify-content-center bg-dark" style={{borderRadius: "30px"}}>
                         <img src={Games} style={{width:"auto"}} />
                         <div>
                             <input type="text" placeholder="Search Games by Title" className="search" value={gameSearch} onChange={(event) => setGameSearch(prevState => prevState = event.target.value)} />
@@ -34,7 +34,7 @@ function GamesContainer({ games, setGames }) {
                     </Row>
                     {search.map((game) =>{
                         return(
-                            <Col xs={12} md={6} lg={4} className="my-2 text-dark d-flex justify-content-center" key={game.id}>                                
+                            <Col xs={12} md={6} lg={4} className="my-2 d-flex justify-content-center" key={game.id}>                                
                                 <Game className="" game={game} key={game.id} />                  
                             </Col>
                         )

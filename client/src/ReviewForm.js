@@ -60,8 +60,8 @@ function GameForm({ setReviews, user, setUser, games }) {
         <div className="" style={{height: "100vh", paddingTop: "220px"}}>
             <Container >
                 <Row>
-                    <Col xs={3} md={0}></Col>
-                    <Col xs={9} md={12} className="text-center p-1 bg-dark border border-light border-5  text-light" style={{borderRadius: "30px"}}>
+                    <Col xs={2} md={0}></Col>
+                    <Col xs={10} md={12} className="text-center p-1 bg-dark border border-light border-5  text-light" style={{borderRadius: "30px"}}>
                         <img src={AddReview} style={{width:"60%"}} />
                         <Form className="" id="gameform" onSubmit={(e) => {                
                             handleSubmit(e)                
