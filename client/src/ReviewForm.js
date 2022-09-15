@@ -1,8 +1,9 @@
 import React from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
-import { Container } from 'react-bootstrap';
+import { Container, Row, Col } from 'react-bootstrap';
 import { useState, useEffect } from 'react';
+import AddReview from "./assets/addreview.png";
 
 function GameForm({ setReviews, user, setUser, games }) {
 
@@ -56,46 +57,51 @@ function GameForm({ setReviews, user, setUser, games }) {
     }
 
     return(
-        <div className="p-5">
-            <Container className="text-center p-5 bg-dark text-light" style={{borderRadius: "30px"}}>
-                <h1>Review a Game</h1>
-                <Form className="p-5" id="gameform" onSubmit={(e) => {                
-                    handleSubmit(e)                
-                }}>
-    
-                    <Form.Group  className="mb-0" controlId="formBasicRating" >
-                    <Form.Label>Which Game Would You Like to Review?</Form.Label>
-                        <Form.Select name="game_id" className="mb-4" aria-label="Default select example" onChange={handleChange} value={form.rating}>
-                            <option className="text-center">Select a Game to Review</option>
-                            {games.map((game) => {
-                                return(
-                                    <option value={game.id} key={game.id}>{game.title}</option>
-                                )
-                            })}
-                        </Form.Select>
-                    </Form.Group>
-                    <Form.Group  className="mb-0" controlId="formBasicRating" >
-                        <Form.Label>Select a Rating</Form.Label>
-                        <Form.Select name="rating" className="mb-4" aria-label="Default select example" onChange={handleChange} value={form.rating}>  
-                                                  
-                            <option className="text-center">Game Rating</option>
-                            <option value="★">★</option>
-                            <option value="★★">★★</option>
-                            <option value="★★★">★★★</option>
-                            <option value="★★★★">★★★★</option>
-                            <option value="★★★★★">★★★★★</option>
-                        </Form.Select>
-                    </Form.Group>
-                    <Form.Group className="mb-4" controlId="formBasicLocation" >
-                        <Form.Label>Your Thoughts</Form.Label>
-                        <Form.Control className="text-center" name="content" type="string" placeholder="Tell Us What You Think" onChange={handleChange} value={form.content}/>
-                        <Form.Text className="text-muted"></Form.Text>
-                    </Form.Group>
+        <div className="" style={{height: "100vh", paddingTop: "220px"}}>
+            <Container >
+                <Row>
+                    <Col xs={3} md={0}></Col>
+                    <Col xs={9} md={12} className="text-center p-1 bg-dark border border-light border-5  text-light" style={{borderRadius: "30px"}}>
+                        <img src={AddReview} style={{width:"60%"}} />
+                        <Form className="" id="gameform" onSubmit={(e) => {                
+                            handleSubmit(e)                
+                        }}>
+            
+                            <Form.Group  className="mb-0" controlId="formBasicRating" >
+                            <Form.Label>Which Game Would You Like to Review?</Form.Label>
+                                <Form.Select name="game_id" className="mb-4" aria-label="Select Game" onChange={handleChange} value={form.rating}>
+                                    <option className="text-center">Select a Game to Review</option>
+                                    {games.map((game) => {
+                                        return(
+                                            <option value={game.id} key={game.id}>{game.title}</option>
+                                        )
+                                    })}
+                                </Form.Select>
+                            </Form.Group>
+                            <Form.Group  className="mb-0" controlId="formBasicRating" >
+                                <Form.Label>Select a Rating</Form.Label>
+                                <Form.Select name="rating" className="mb-4" aria-label="Default select example" onChange={handleChange} value={form.rating}>  
+                                                        
+                                    <option className="text-center">Game Rating</option>
+                                    <option value="★">★</option>
+                                    <option value="★★">★★</option>
+                                    <option value="★★★">★★★</option>
+                                    <option value="★★★★">★★★★</option>
+                                    <option value="★★★★★">★★★★★</option>
+                                </Form.Select>
+                            </Form.Group>
+                            <Form.Group className="mb-4" controlId="formBasicLocation" >
+                                <Form.Label>Your Thoughts</Form.Label>
+                                <Form.Control className="text-center" name="content" type="string" placeholder="Tell Us What You Think" onChange={handleChange} value={form.content}/>
+                                <Form.Text className="text-muted"></Form.Text>
+                            </Form.Group>
 
-                    <Button variant="primary" type="submit">
-                        Submit
-                    </Button>
-                </Form>
+                            <Button variant="primary" type="submit">
+                                Submit
+                            </Button>
+                        </Form>
+                    </Col>
+                </Row>
             </Container>
         </div>
     )

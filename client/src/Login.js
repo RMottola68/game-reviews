@@ -27,7 +27,7 @@ function Login({ setUser }) {
 
     if (!clicked) {
       return(
-    <div className="p-5">
+    <div className="p-5" style={{height: "100vh"}}>
       <Container className="text-center p-5 bg-dark text-light" style={{borderRadius: "30px"}}>
         
         <Form onSubmit={handleLogin}>

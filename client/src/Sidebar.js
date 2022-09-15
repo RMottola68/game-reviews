@@ -32,6 +32,15 @@ function Sidebar({ user, setUser }) {
             <CDBSidebarContent className="sidebar-content" >
                 <CDBSidebarMenu  >
                     <Row>
+                        <NavLink to="/home"   className="d-flex align-items-center">
+                            
+                            <Col className="text-center "><CDBSidebarMenuItem icon="home" ></CDBSidebarMenuItem></Col>
+                            <Col className="text-center "><Button className="" variant="outline-light">Home</Button></Col>
+                            
+                        </NavLink>
+                    </Row>
+
+                    <Row>
                         <NavLink to="/games"   className="d-flex align-items-center">
                             
                             <Col className="text-center "><CDBSidebarMenuItem icon="columns" ></CDBSidebarMenuItem></Col>
@@ -50,7 +59,7 @@ function Sidebar({ user, setUser }) {
                         </NavLink>
                     </Row>
 
-                    <Row className="d-flex align-items-center">
+                    <Row >
                         <NavLink to="/myprofile"  className="d-flex align-items-center">
                             
                             <Col className="text-center "><CDBSidebarMenuItem icon="user"></CDBSidebarMenuItem></Col>
@@ -59,19 +68,19 @@ function Sidebar({ user, setUser }) {
                         </NavLink>
                     </Row>
                     
-                    <Row className="d-flex align-items-center">
+                    <Row >
                         <NavLink to="/addgame"  className="d-flex align-items-center">
                             
-                            <Col className="text-center "><CDBSidebarMenuItem icon="chart-line"></CDBSidebarMenuItem></Col>
+                            <Col className="text-center "><CDBSidebarMenuItem icon="plus"></CDBSidebarMenuItem></Col>
                             <Col className="text-center "><Button variant="outline-light">Add a Game</Button></Col>
                             
                         </NavLink>
                     </Row>
 
-                    <Row className="d-flex align-items-center">
+                    <Row >
                         <NavLink to="/addreview"  className="d-flex align-items-center">
                             
-                            <Col className="text-center "><CDBSidebarMenuItem icon="chart-line"></CDBSidebarMenuItem></Col>
+                            <Col className="text-center "><CDBSidebarMenuItem icon="plus"></CDBSidebarMenuItem></Col>
                             <Col className="text-center "><Button variant="outline-light">Add a Review</Button></Col>
                             
                         </NavLink>
@@ -82,10 +91,10 @@ function Sidebar({ user, setUser }) {
 
             <CDBSidebarFooter style={{ textAlign: 'center' }}>       
                 <Row>       
-                    <NavLink to="/login" className="d-flex text-light align-items-center text-decoration-none">
-                        <Col>
+                    <NavLink to="/login" className=" d-flex text-light align-items-center text-decoration-none">
+                        <Col className="">
                             <CDBSidebarMenuItem icon="power-off"  onClick={handleLogoutClick}>
-                                <Button className="btn-danger m-0" onClick={handleLogoutClick}>Logout</Button>
+                                <Button className="btn-danger " onClick={handleLogoutClick}>Logout</Button>
                             </CDBSidebarMenuItem>
                         </Col>
                     </NavLink>   

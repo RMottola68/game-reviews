@@ -69,7 +69,7 @@ function SignUp({ setUser, setClicked }) {
       <Container className="text-center p-5 bg-dark text-light" style={{borderRadius: "30px"}}>
           <Form onSubmit={handleSignUp}>
             <Row>
-              <h1>Sign Up</h1>
+              <h1>Sign Up for Reviewbers</h1>
               <Form.Label htmlFor="username"><h2>Username</h2></Form.Label>
               <Form.Control
                 type="text"

@@ -8,7 +8,7 @@ function ReviewNoImage({ review }) {
     return (      
                  
         
-            <div className="card border border-5 border-light bg-dark text-white">  
+            <div className="border border-5 border-light bg-dark text-white">  
                          
                 <div className="">
                     <div style={{fontSize: "30px"}}>Rating: {review.rating}</div>

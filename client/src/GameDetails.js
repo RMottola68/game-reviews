@@ -30,12 +30,12 @@ function GameDetails() {
     return(
 
       
-        <Container className="p-5" style={{borderRadius: "30px"}}>
-            <Row className="text-center  justify-contents-center" style={{borderRadius: "30px"}}>
-                <Game game={game}/>
+        <Container className="text-center" style={{height: "100vh", borderRadius: "30px"}}>
+            <Row className="text-center " style={{marginLeft: "35%", marginRight: "auto"}} >
+                <Game game={game} />
             </Row>
             <Row>
-              <h2 className="text-center">Reviews for this Game</h2>
+              <h2 className="text-center border border-5 border-light text-light bg-dark" style={{borderRadius: "10px"}}>Reviews for this Game</h2>
               {game.reviews.length > 0 ? game.reviews.map((review) => <ReviewNoImage review={review} key={review.id} />) : <h3 className="text-center">There are no reviews!</h3>}
             </Row>
         </Container>
