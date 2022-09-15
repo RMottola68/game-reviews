@@ -80,7 +80,7 @@ function GameForm({ setReviews, user, setUser, games }) {
                             </Form.Group>
                             <Form.Group  className="mb-0" controlId="formBasicRating" >
                                 <Form.Label>Select a Rating</Form.Label>
-                                <Form.Select name="rating" className="mb-4" aria-label="Default select example" onChange={handleChange} value={form.rating}>  
+                                <Form.Select name="rating" className="mb-4" aria-label="Select Rating" onChange={handleChange} value={form.rating}>  
                                                         
                                     <option className="text-center">Game Rating</option>
                                     <option value="★">★</option>
