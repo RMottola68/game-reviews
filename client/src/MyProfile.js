@@ -16,7 +16,7 @@ function MyProfile({ user }){
                             <h1>{user.username}'s Profile</h1>
                             <div style={{fontSize: "30px"}}>Are you a Developer: {user.is_developer === "true" ? "yes" : "no"}</div>
                             <div style={{fontSize: "30px"}}>Joined: {user.join_date}</div>   
-                            <img fluid src={user.image} style={{width:"30vw"}}/>          
+                            <img src={user.image} style={{width:"30vw"}}/>          
                         </div>
                     </Row>    
                 
