@@ -2,10 +2,10 @@ class UsersController < ApplicationController
   skip_before_action :authorized
   
     #shows all users
-      def index
-          users = User.all
-          render json: users
-      end
+      # def index
+      #     users = User.all
+      #     render json: users
+      # end
     
     #creates a user / signup
       def create

@@ -22,9 +22,9 @@ function GamesContainer({ games, setGames }) {
 
     return (
         
-        <Container className="text-center pt-2" style={{ height: "100%", width: "100vw"}}>
+        <Container className="text-center pt-5" style={{ height: "100%", width: "100vw"}}>
             
-                <Row  className="bg-muted justify-content-center" style={{height: "100%", paddingBottom:"100px"}}>
+                <Row  className="bg-muted justify-content-center" style={{paddingBottom:"100px"}}>
                     
                     
                         <Row className="my-2 border-light border border-5 text-center justify-content-center bg-dark" style={{borderRadius: "30px"}}>
@@ -37,7 +37,7 @@ function GamesContainer({ games, setGames }) {
                         
                         {search.map((game) =>{
                             return(
-                                <Col xs={12} md={6} lg={4} className="my-2 d-flex justify-content-center" key={game.id} >                                s
+                                <Col xs={12} md={6} lg={4} className="my-2 d-flex justify-content-center" key={game.id} >
                                     <Game className="" game={game} key={game.id} />                  
                                 </Col>
                             )
