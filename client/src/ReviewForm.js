@@ -13,14 +13,17 @@ function GameForm({ setReviews, user, setUser, games }) {
         //     .then(reviewsData => setReviews(reviewsData))
     // },[])
 
-    const [form, setForm] = useState({rating: "", content: "", game_id: "", user_id: user.id})
+    const [form, setForm] = useState({rating: "", content: "", game_id: "" , user_id: user.id})
     
     function handleChange (e) {
         setForm((prevForm) => {
+            
             return {
                 ...prevForm, [e.target.name]: e.target.value
             }
         })
+        console.log(form.game_id)
+        
     }
 
     function handleSubmit(e){
@@ -67,9 +70,9 @@ function GameForm({ setReviews, user, setUser, games }) {
                             handleSubmit(e)                
                         }}>
             
-                            <Form.Group  className="mb-0" controlId="formBasicRating" >
+                            <Form.Group  className="mb-0" >
                             <Form.Label>Which Game Would You Like to Review?</Form.Label>
-                                <Form.Select name="game_id" className="mb-4" aria-label="Select Game" onChange={handleChange} value={form.rating}>
+                                <Form.Select name="game_id" className="mb-4 text-center" aria-label="Select Game" onChange={handleChange} value={form.game_id}>
                                     <option className="text-center">Select a Game to Review</option>
                                     {games.map((game) => {
                                         return(
@@ -78,9 +81,9 @@ function GameForm({ setReviews, user, setUser, games }) {
                                     })}
                                 </Form.Select>
                             </Form.Group>
-                            <Form.Group  className="mb-0" controlId="formBasicRating" >
+                            <Form.Group  className="mb-0" >
                                 <Form.Label>Select a Rating</Form.Label>
-                                <Form.Select name="rating" className="mb-4" aria-label="Select Rating" onChange={handleChange} value={form.rating}>  
+                                <Form.Select name="rating" className="mb-4 text-center" aria-label="Select Rating" onChange={handleChange} value={form.rating}>  
                                                         
                                     <option className="text-center">Game Rating</option>
                                     <option value="★">★</option>
@@ -90,7 +93,7 @@ function GameForm({ setReviews, user, setUser, games }) {
                                     <option value="★★★★★">★★★★★</option>
                                 </Form.Select>
                             </Form.Group>
-                            <Form.Group className="mb-4" controlId="formBasicLocation" >
+                            <Form.Group className="mb-4" >
                                 <Form.Label>Your Thoughts</Form.Label>
                                 <Form.Control className="text-center" name="content" type="string" placeholder="Tell Us What You Think" onChange={handleChange} value={form.content}/>
                                 <Form.Text className="text-muted"></Form.Text>

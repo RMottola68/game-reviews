@@ -8,9 +8,9 @@ function Review({ review }) {
     return (      
                  
         
-            <div className="border border-5 border-light bg-dark text-white" style={{borderRadius: "30px", width: "100%"}}>  
+            <Container className="border border-5 border-light bg-dark text-white" style={{borderRadius: "30px", width: "100%"}}>  
                          
-                <div className="">
+                <Col className="">
                     <img src={review.game.image} className="m-4" style={{width:"230px", height:"auto"}} />
                     <div style={{fontSize: "30px"}}>Game: {review.game.title}</div>
                     <div style={{fontSize: "30px"}}>Rating: {review.rating}</div>
@@ -19,8 +19,8 @@ function Review({ review }) {
                     
                     
 
-                </div>              
-            </div>
+                </Col>              
+            </Container>
         
         
         

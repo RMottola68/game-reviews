@@ -60,7 +60,7 @@ function App() {
     )
   } else {
     return (
-      <div className="App m-0 p-0" style={sectionStyle} >
+      <div className="App" style={sectionStyle} >
         
         <Sidebar className="" id="sidebar" user={user} setUser={setUser} style={{position: "relative"}}/>
         

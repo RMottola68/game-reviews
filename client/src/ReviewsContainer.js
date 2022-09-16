@@ -15,8 +15,8 @@ function ReviewsContainer({ reviews }) {
     })
 
     return (
-        <Container className="text-center pt-2" style={{ borderRadius: "30px", height: "100%", width: "100vw"}}>
-            <Container >
+        <Container className="text-center pt-5" style={{ height: "100%", width: "100vw", paddingBottom:"100px"}}>
+            
                 <Row className="bg-muted justify-content-center" >
                     <Row className="my-2 border-light border border-5 text-center justify-content-center bg-dark" style={{borderRadius: "30px"}}>
                         <img src={Reviews} style={{width:"auto"}} />
@@ -27,13 +27,13 @@ function ReviewsContainer({ reviews }) {
                     </Row>
                     {search.map((review) =>{
                         return(
-                            <Col xs={12} md={6} lg={4} className="my-2 text-dark d-flex justify-content-center" key={review.id}>                                
+                            <Col xs={12} md={6} lg={4} className="my-2 d-flex justify-content-center" key={review.id}>                                
                                 <Review className="" review={review} key={review.id} />                  
                             </Col>
                         )
                     })}
                 </Row>
-            </Container>
+            
         </Container>
 
     );

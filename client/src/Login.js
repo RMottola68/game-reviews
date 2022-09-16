@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Button, Container, Form, Row } from 'react-bootstrap';
 import SignUp from './SignUp';
+import LoginImg from './assets/login.png';
 
 function Login({ setUser }) {
   const [loginUser, setloginUser] = useState("");
@@ -31,9 +32,9 @@ function Login({ setUser }) {
       <Container className="text-center p-5 bg-dark text-light" style={{borderRadius: "30px"}}>
         
         <Form onSubmit={handleLogin}>
-          <h1 className="mb-5">Login to Reviewbers</h1>
+        <img src={LoginImg} style={{width:"100%"}} />
           <Row>
-            <Form.Group  className="mb-0" controlId="formBasicName" >
+            <Form.Group  className="mb-0" >
               <Form.Label htmlFor="username"><h2>Username</h2></Form.Label>
               <Form.Control
                 type="text"
